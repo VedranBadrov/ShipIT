@@ -2,8 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root 'main#home'
 
-  get "/orders", to: "main#orders"
-  get "/curriersportal", to: "main#curriersportal"
+  get "/aboutus", to: "main#aboutus"
+  get "services", to: "main#services"
+  get "/receiversender", to: "main#receiversender"
+  get "/currierportal", to: "main#currierportal"
   get "/costcalculator", to: "main#costcalculator"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

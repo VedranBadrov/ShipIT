@@ -1,2 +1,25 @@
-<h1>Welcome</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="application.css">
+    </head>
+    
+    <body>
+        <div class="main"><h2>Welcome to the Delivery Web Application</h2>
+        <% if current_user %>
+            <p>Hello <%= current_user.email %></p>
+            <p>You are a <%= current_user.role %></p>
+            <p>
+                You have successfully authenticated with your Devise account.
+              You are now ready to interact with this application
+            </p>
+        <% else %>
+            <p>Your are not signed in</p>
+            <%= link_to "Get Started!", new_user_registration_path %>
+        <% end %>
+        </div>
 
+        <div class="recieversender"><h4>Interested in sending or receiving items?</h4>
+        </div>
+    </body>
+</html>
