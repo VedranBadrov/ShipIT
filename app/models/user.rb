@@ -6,6 +6,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :name, presence: true
+
   enum role: %i[user currier admin]
   after_initialize :set_default_role, if: :new_record?
   def set_default_role

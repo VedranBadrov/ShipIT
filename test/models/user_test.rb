@@ -3,13 +3,13 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-    test"should not save item without a name" do
-      item = Item.new
-      assert_not item.save, "Saved item without name"
+    test"should not save user without a name" do
+      User = User.new
+      assert_not item.save, "Saved user without name"
     end
 
-    test "should save item with a name" do
-      item = Item.new(name: "Test")
-      assert item.save, "Saved item with name"
+    test "Should save user with a name" do
+      user = User.new(name: "Test")
+      assert user.save, "Saved user with name"
     end
 end
