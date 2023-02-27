@@ -12,7 +12,7 @@ workflows:
 # Define the jobs we want to run for this project
 jobs:
   build:
-    working_directory: ~/ExampleApplication
+    working_directory: ~/DeliveryWebApplication
     docker:
       - image: circleci/node:latest
     steps:
