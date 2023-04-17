@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_destination: MyString
+  final_destination: MyString
+  quantity: 1
+  goods_type: MyString
+  additional_details: MyText
+
+two:
+  start_destination: MyString
+  final_destination: MyString
+  quantity: 1
+  goods_type: MyString
+  additional_details: MyText
