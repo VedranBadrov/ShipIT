@@ -15,8 +15,8 @@ Rails.application.routes.draw do
   get '/show', to: 'orders#show'
   get '/track', to: 'orders#track'
   get '/history', to: 'orders#history'
+  get 'orders/search', to: 'orders#search', as: 'search_orders'
   
-
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")

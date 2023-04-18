@@ -1,1 +1,6 @@
 <h1>Track your order</h1>
+<%= form_tag(search_orders_path, method: "get") do %>
+  <%= label_tag(:order_number, "Enter Tracking Number:") %>
+  <%= text_field_tag(:order_number) %>
+  <%= submit_tag("Search") %>
+<% end %>

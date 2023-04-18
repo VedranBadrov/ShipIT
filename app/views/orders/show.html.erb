@@ -7,24 +7,24 @@
             <tr>
                 <div class="mb-3">
                     <th>Order Number</th>
-                    <th>ID</th>
                     <th>Start Destination</th>
                     <th>Final Destination</th>
                     <th>Quantity</th>
                     <th>Goods Type</th>
                     <th>Additional Details</th>
+                    <th>Order Status</th>
                     <th class="d-print-none"> 
                     </th>
                 </div>
             </tr>
         </thead>
         <td><%= order.order_number %></td>
-        <td><%= order.id %></td>
         <td><%= order.start_destination %></td>
         <td><%= order.final_destination%></td>
         <td><%= order.quantity%></td>
         <td><%= order.goods_type%></td>
         <td><%= order.additional_details%></td>
+        <td><%= order.order_status%></td>
         <% end %>
     </table>
 </div>

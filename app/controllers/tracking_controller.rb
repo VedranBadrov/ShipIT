@@ -1,2 +1,3 @@
 class TrackingController < ApplicationController
+
 end
