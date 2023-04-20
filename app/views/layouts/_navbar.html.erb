@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">Delivery Web Application</a>
+    <a class="navbar-brand" href="/">ShipIT</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -12,21 +12,21 @@
         <li class="nav-item">
           <a class="nav-link" href="/services">Services</a>
         </li>
-        <% if user_signed_in? %>
+
         <li class="nav-item">
-          <a class="nav-link" href="/receiversender">Sender/Reciever Portal</a>
+          <a class="nav-link" href="/receiversender">Receiver Portal</a>
         </li>
+
         <li class="nav-item">
-          <a class="nav-link" href="/currierportal">Currier portal</a>
-        </li>
+          <a class="nav-link" href="/currierportal">Currier Portal</a>
+
         <li class="nav-item">
           <a class="nav-link" href="/costcalculator">Cost Calculator</a>
-        </li>
-        <% end %>
+        </li>     
       </ul>
       <ul class="navbar-nav">
         <% if current_user %>
-          <li class="nav-item"> <%= link_to "Manage my acount", edit_user_registration_path, class: "nav-link" %></li>
+          <li class="nav-item"> <%= link_to "Manage my account", edit_user_registration_path, class: "nav-link" %></li>
           <li class="nav-item"> <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-small btn-primary mx-2" %></li>
         <% else %>
           <li class="nav-item"> <%= link_to "Sign Up", new_user_registration_path, class: "nav-link"  %></li>

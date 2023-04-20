@@ -21,11 +21,11 @@
     <%= f.label :additional_details %>
     <%= f.text_area :additional_details, class: 'form-control' %>
   </div>
-  <%= f.submit 'Submit', class: 'btn btn-primary', type: 'submit' %>
-  <% if flash[:notice] %>
-  <div class="alert alert-success">
-    <%= flash[:notice] %>
-  </div>
+  <% if flash[:success] %>
+    <div class="alert alert-success">
+      <%= flash[:success] %>
+    </div>
   <% end %>
+  <%= f.submit 'Submit', class: 'btn btn-primary', type: 'submit' %>
 
 <% end %>

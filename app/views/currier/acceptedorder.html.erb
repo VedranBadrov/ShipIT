@@ -1,0 +1,32 @@
+<h1>Accepted Orders</h1>
+  <div class="table-responsive-sm">
+    <table class="table table-hover">
+      <% Order.all.each do |order| %>
+        <% if order.order_status == "Accepted" %>
+        <thead>    
+          <tr>
+            <div class="mb-3">
+              <th>Order Number</th>
+              <th>Start Destination</th>
+              <th>Final Destination</th>
+              <th>Quantity</th>
+              <th>Goods Type</th>
+              <th>Additional Details</th>
+              <th>Order Status</th>
+                    </th>
+                </div>
+            </tr>
+        </thead>
+        <tr>
+          <td><%= order.order_number %></td>
+          <td><%= order.start_destination %></td>
+          <td><%= order.final_destination %></td>
+          <td><%= order.quantity %></td>
+          <td><%= order.goods_type %></td>
+          <td><%= order.additional_details %></td>
+          <td><%= order.order_status %></td>
+        <% end %>
+        </tr>
+<% end %>
+</table>
+</div>

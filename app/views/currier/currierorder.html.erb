@@ -1,0 +1,40 @@
+<h1>Available Orders</h1>
+  <div class="table-responsive-sm">
+    <table class="table table-hover">
+      <% Order.all.each do |order| %>
+      <% if order.order_status == "Pending" %>
+        <thead>    
+          <tr>
+            <div class="mb-3">
+              <th>Order Number</th>
+              <th>Start Destination</th>
+              <th>Final Destination</th>
+              <th>Quantity</th>
+              <th>Goods Type</th>
+              <th>Additional Details</th>
+              <th>Order Status</th>
+              <% if current_user.currier? %>
+                <th class="d-print-none">Accept Order</th>
+              <% end %>
+              </th>
+            </div>
+          </tr>
+        </thead>
+        <tr>
+          <td><%= order.order_number %></td>
+          <td><%= order.start_destination %></td>
+          <td><%= order.final_destination%></td>
+          <td><%= order.quantity%></td>
+          <td><%= order.goods_type%></td>
+          <td><%= order.additional_details%></td>
+          <td><%= order.order_status%></td>
+          <% if current_user.currier? && order.order_status == "Pending" %>
+            <td class="d-print-none">
+              <%= button_to "Accept", accept_order_path(order), method: :patch, class: "btn btn-primary" %>
+            </td>
+          <% end %>
+        </tr>
+    <% end %>   
+    <% end %>
+  </tbody>
+</table>

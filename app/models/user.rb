@@ -13,8 +13,4 @@ class User < ApplicationRecord
   def set_default_role
     self.role ||= :user
   end
-
-  #def curier_or_admin?
-    #role.curier? || role.is_admin?
-  #end
 end

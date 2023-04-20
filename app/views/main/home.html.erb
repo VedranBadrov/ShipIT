@@ -5,21 +5,47 @@
     </head>
     
     <body>
-        <div class="main"><h2>Welcome to the Delivery Web Application</h2>
+        <div class="main"><h2>Welcome to ShipIT</h2>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <% if current_user %>
             <p>Hello <%= current_user.email %></p>
             <p>You are a <%= current_user.role %></p>
-            <p>
-                You have successfully authenticated with your Devise account.
-                You are now ready to interact with this application
-            </p>
+ <div class="container my-5">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="jumbotron">
+          <h1 class="display-4">Need to Send an Item?</h1>
+          <p class="lead">ShipIT offers a fast, reliable, and secure shipping service for your items.</p>
+          <hr class="my-4">
+          <% if current_user %>
+            <%= link_to "Ship Now", new_order_path, class: "btn btn-lg btn-primary" %>
+          <% else %>
+            <%= link_to "Get Started", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="jumbotron">
+          <h1 class="display-4">Expecting a Delivery?</h1>
+          <p class="lead">ShipIT offers a reliable and fast delivery service for your items.</p>
+          <hr class="my-4">
+          <% if current_user %>
+            <%= link_to "Get Started", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+
         <% else %>
             <p>Your are not signed in</p>
             <%= link_to "Get Started!", new_user_registration_path %>
         <% end %>
         </div>
 
-        <div class="recieversender"><h4>Interested in sending or receiving items?</h4>
-        </div>
+        <footer class="footer mt-auto py-3 bg-light">
+            <div class="container">
+                <span class="text-muted">&copy; 2023 ShipIT</span>
+            </div>
     </body>
 </html>
