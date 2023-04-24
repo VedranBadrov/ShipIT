@@ -1,25 +1,31 @@
 <h1>New Order</h1>
-<link rel="stylesheet" type="text/css" href="/assets/new.css">
+<link rel="stylesheet" type="text/css" href="/assets/new-order-form.css">
 <%= form_for @order do |f| %>
-<div class="form-group">
-  <%= f.label :start_destination %>
-  <%= f.text_field :start_destination, class: 'form-control' %>
-</div>
   <div class="form-group">
-    <%= f.label :final_destination %>
-    <%= f.text_field :final_destination, class: 'form-control' %>
+    <%= f.label :start_destination, "Start destination details" %>
+    <%= f.text_field :start_destination_address_line_1, class: 'form-control', placeholder: 'Address line 1' %>
+    <%= f.text_field :start_destination_address_line_2, class: 'form-control', placeholder: 'Address line 2' %>
+    <%= f.text_field :start_destination_city, class: 'form-control', placeholder: 'City' %>
+    <%= f.text_field :start_destination_postcode, class: 'form-control', placeholder: 'Postcode' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :final_destination, "Final Destination Details" %>
+    <%= f.text_field :final_destination_address_line_1, class: 'form-control', placeholder: 'Final address line 1' %>
+    <%= f.text_field :final_destination_address_line_2, class: 'form-control', placeholder: 'Final address line 2' %>
+    <%= f.text_field :final_destination_city, class: 'form-control', placeholder: 'Final destination city' %>
+    <%= f.text_field :final_destination_postcode, class: 'form-control', placeholder: 'Final destination postcode' %>
   </div>
   <div class ="form-group">
     <%= f.label :quantity %>
-    <%= f.text_field :quantity, class: 'form-control' %>
+    <%= f.text_field :quantity, class: 'form-control', placeholder: 'Number of items' %>
   </div>
   <div class="form-group">
-    <%= f.label :goods_type %>
-    <%= f.text_field :goods_type, class: 'form-control' %>
+    <%= f.label :goods_type, "Goods Type" %>
+    <%= f.text_field :goods_type, class: 'form-control', placeholder: 'Type of item' %>
   </div>
   <div class="form-group">
     <%= f.label :additional_details %>
-    <%= f.text_area :additional_details, class: 'form-control' %>
+    <%= f.text_area :additional_details, class: 'form-control', placeholder: 'Anything the currier should be aware of?' %>
   </div>
   <% if flash[:success] %>
     <div class="alert alert-success">
@@ -27,5 +33,5 @@
     </div>
   <% end %>
   <%= f.submit 'Submit', class: 'btn btn-primary', type: 'submit' %>
-
 <% end %>
+

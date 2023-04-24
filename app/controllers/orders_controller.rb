@@ -39,7 +39,23 @@ class OrdersController < ApplicationController
   private
 
   def order_params
-    params.require(:order).permit(:order_number, :start_destination, :final_destination, :quantity, :goods_type, :additional_details, :user_id, :order_status)
+    params.require(:order).permit(
+      :order_number,
+      :start_destination,
+      :start_destination_address_line_1,
+      :start_destination_address_line_2,
+      :start_destination_city,
+      :start_destination_postcode,
+      :final_destination,
+      :final_destination_address_line_1,
+      :final_destination_address_line_2,
+      :final_destination_city,
+      :final_destination_postcode,
+      :quantity,
+      :goods_type,
+      :additional_details,
+      :user_id,
+      :order_status)
   end
 end
 

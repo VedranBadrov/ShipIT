@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,8 +16,20 @@
           </div>
           <div class="body">
             <div class="details">
-              <div class="start-destination">From: <%= order.start_destination %></div>
-              <div class="final-destination">To: <%= order.final_destination %></div>
+              <div class="start-destination">
+                From: 
+                <%= order.start_destination_address_line_1 %>,
+                <%= order.start_destination_address_line_2 %>,
+                <%= order.start_destination_city %>,
+                <%= order.start_destination_postcode %>
+              </div>
+              <div class="final-destination">
+                To: 
+                <%= order.final_destination_address_line_1 %>,
+                <%= order.final_destination_address_line_2 %>,
+                <%= order.final_destination_city %>,
+                <%= order.final_destination_postcode %>
+              </div>
               <div class="quantity">Quantity: <%= order.quantity %></div>
               <div class="goods-type">Goods Type: <%= order.goods_type %></div>
               <% if order.additional_details.present? %>

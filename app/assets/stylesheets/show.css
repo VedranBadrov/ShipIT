@@ -8,6 +8,26 @@
   border: 1px solid #ddd;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+.receipt .start-destination,
+.receipt .final-destination {
+  white-space: pre-wrap;
+}
+
+.receipt .details {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.receipt .details > * {
+  flex: 1 1 100%;
+}
+
+.receipt .status {
+  margin-top: 10px;
+  font-weight: bold;
 }
 
 .order {

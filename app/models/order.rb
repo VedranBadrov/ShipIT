@@ -9,9 +9,5 @@ class Order < ApplicationRecord
     def set_default_order_status
       self.order_status ||= :Pending
     end
-
-   # def accepted_by_currier?(currier)
-      #self.order_status ==  "Accepted" && self.used_id = user_id
-    #end
 end
  
