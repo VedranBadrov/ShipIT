@@ -1,31 +1,34 @@
-<h1>Orders list</h1>
-<% @order = current_user.orders %>
-<div class="table-responsive-sm">
-    <table class="table table-hover">
-        <% @order.each do |order| %>
-        <thead>    
-            <tr>
-                <div class="mb-3">
-                    <th>Order Number</th>
-                    <th>Start Destination</th>
-                    <th>Final Destination</th>
-                    <th>Quantity</th>
-                    <th>Goods Type</th>
-                    <th>Additional Details</th>
-                    <th>Order Status</th>
-                    <th class="d-print-none"> 
-                    </th>
-                </div>
-            </tr>
-        </thead>
-        <td><%= order.order_number %></td>
-        <td><%= order.start_destination %></td>
-        <td><%= order.final_destination%></td>
-        <td><%= order.quantity%></td>
-        <td><%= order.goods_type%></td>
-        <td><%= order.additional_details%></td>
-        <td><%= order.order_status %></td>
-
-        <% end %>
-    </table>
-</div>
+<!DOCTYPE html>
+<html>
+<head>
+  <h1>Orders list</h1>
+  <link rel="stylesheet" type="text/css" href="/assets/show.css">
+</head>
+<body>
+  <% @order = current_user.orders %>
+  <% @order.each do |order| %>
+    <div class="receipt">
+      <div class="order">
+        <div class="header">
+          <div class="order-number">Order Number: <%= order.order_number %></div>
+          <div class="order-date">Order Date: <%= order.created_at.strftime('%d %b %Y') %></div>
+        </div>
+        <div class="body">
+          <div class="details">
+            <div class="start-destination">From: <%= order.start_destination %></div>
+            <div class="final-destination">To: <%= order.final_destination %></div>
+            <div class="quantity">Quantity: <%= order.quantity %></div>
+            <div class="goods-type">Goods Type: <%= order.goods_type %></div>
+            <% if order.additional_details.present? %>
+              <div class="additional-details">Additional Details: <%= order.additional_details %></div>
+            <% end %>
+          </div>
+          <div class="status">
+            Status: <%= order.order_status %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</body>
+</html>

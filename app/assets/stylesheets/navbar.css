@@ -1,0 +1,12 @@
+.navbar {
+    background-color: black;
+  }
+  
+  .navbar-brand,
+  .navbar-nav li a {
+    color: lightblue;
+  }
+  
+  .navbar-nav li a:hover {
+    border-bottom: 2px solid lightblue;
+  }

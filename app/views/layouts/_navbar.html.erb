@@ -1,38 +1,37 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: black;">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/">ShipIT</a>
+    <a class="navbar-brand" href="/" style="color: white;">ShipIT</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" href="/aboutus">About us</a>
+          <a class="nav-link" href="/aboutus" style="color: white;">About us</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/services">Services</a>
+          <a class="nav-link" href="/careers" style="color: white;">Careers</a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link" href="/receiversender">Receiver Portal</a>
+          <a class="nav-link" href="/receiversender" style="color: white;">Receiver Portal</a>
         </li>
-
         <li class="nav-item">
-          <a class="nav-link" href="/currierportal">Currier Portal</a>
-
+          <a class="nav-link" href="/currierportal" style="color: white;">Currier Portal</a>
+        </li>
         <li class="nav-item">
-          <a class="nav-link" href="/costcalculator">Cost Calculator</a>
-        </li>     
+          <a class="nav-link" href="/costcalculator" style="color: white;">Cost Calculator</a>
+        </li>  
       </ul>
       <ul class="navbar-nav">
         <% if current_user %>
-          <li class="nav-item"> <%= link_to "Manage my account", edit_user_registration_path, class: "nav-link" %></li>
-          <li class="nav-item"> <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-small btn-primary mx-2" %></li>
+          <li class="nav-item"> <%= link_to "Manage my account", edit_user_registration_path, class: "nav-link", style: "color: white;" %></li>
+          <li class="nav-item"> <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-small btn-primary mx-2", style: "color: white;" %></li>
         <% else %>
-          <li class="nav-item"> <%= link_to "Sign Up", new_user_registration_path, class: "nav-link"  %></li>
-          <li class="nav-item"> <%= link_to "Sign In", new_user_session_path, class: "nav-link"  %></li>
+          <li class="nav-item"> <%= link_to "Sign Up", new_user_registration_path, class: "nav-link", style: "color: white;"  %></li>
+          <li class="nav-item"> <%= link_to "Sign In", new_user_session_path, class: "nav-link", style: "color: white;"  %></li>
         <% end %>
       </ul>
     </div>
   </div>
 </nav>
+

@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="application.css">
-    </head>
-    
-    <body>
-        <div class="main"><h2>Welcome to ShipIT</h2>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <% if current_user %>
-            <p>Hello <%= current_user.email %></p>
-            <p>You are a <%= current_user.role %></p>
- <div class="container my-5">
-    <div class="row">
-      <div class="col-md-6">
-        <div class="jumbotron">
-          <h1 class="display-4">Need to Send an Item?</h1>
-          <p class="lead">ShipIT offers a fast, reliable, and secure shipping service for your items.</p>
-          <hr class="my-4">
+  <head>
+    <link rel="stylesheet" href="home.css">
+    <script src="home.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div class="banner">
+      <h1>Welcome to ShipIT</h1>
+      <% if current_user %>
+        <p>Hello <%= current_user.email %>, you are a <%= current_user.role %>.</p>
+      <% end %>
+    </div>
+    <div class="container">
+      <div class="main">
+        <div class="content">
+          <h2>Fast and Reliable Shipping Service</h2>
+          <p>ShipIT offers a fast, reliable, and secure shipping service for your items.</p>
+        </div>
+        <div class="cta">
           <% if current_user %>
             <%= link_to "Ship Now", new_order_path, class: "btn btn-lg btn-primary" %>
           <% else %>
@@ -24,28 +26,12 @@
           <% end %>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="jumbotron">
-          <h1 class="display-4">Expecting a Delivery?</h1>
-          <p class="lead">ShipIT offers a reliable and fast delivery service for your items.</p>
-          <hr class="my-4">
-          <% if current_user %>
-            <%= link_to "Get Started", new_user_registration_path, class: "btn btn-lg btn-primary" %>
-          <% end %>
+      <footer class="footer mt-auto py-3">
+        <div class="container">
+          <span class="text-muted">&copy; 2023 ShipIT</span>
         </div>
-      </div>
+      </footer>
     </div>
-  </div>
-
-        <% else %>
-            <p>Your are not signed in</p>
-            <%= link_to "Get Started!", new_user_registration_path %>
-        <% end %>
-        </div>
-
-        <footer class="footer mt-auto py-3 bg-light">
-            <div class="container">
-                <span class="text-muted">&copy; 2023 ShipIT</span>
-            </div>
-    </body>
+  </body>
 </html>
+

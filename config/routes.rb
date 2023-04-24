@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   root 'main#home'
   
   get '/aboutus', to: 'main#aboutus'
-  get 'services', to: 'main#services'
+  get '/careers', to: 'main#careers'
   get '/receiversender', to: 'main#receiversender'
   get '/currierportal', to: 'main#currierportal'
   get '/costcalculator', to: 'main#costcalculator'
@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
   get '/currierorder', to: 'currier#currierorder'
   get '/acceptedorder', to: 'currier#acceptedorder'
+  get '/manageorder', to: 'currier#manageorder'
   get '/routeplanner', to: 'currier#routeplanner'
   get '/curriertrack', to: 'currier#curriertrack'
   get '/currierhistory', to: 'currier#currierhistory'

@@ -14,16 +14,5 @@
  *= require_self
  */
 
-.#main {
-    color: red;
-    background-image: url(deliveryphoto1.jpg);
-    background-size: cover;
-    height: 500px;
-    margin-right: 850px;
- }
-
- .#receiversender {
-    background-image: url(deliveryphoto2.jpg);
-    background-size: cover;
-
- }
+ *= require_navbar
+ 
