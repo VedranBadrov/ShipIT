@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_24_174055) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_26_162124) do
   create_table "orders", force: :cascade do |t|
     t.string "order_number"
     t.string "start_destination"
@@ -30,6 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_24_174055) do
     t.string "final_destination_address_line_2"
     t.string "final_destination_city"
     t.string "final_destination_postcode"
+    t.string "cancellation_reason"
   end
 
   create_table "users", force: :cascade do |t|

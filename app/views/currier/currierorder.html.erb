@@ -1,13 +1,12 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-  <h1>Available Orders</h1>
-  <link rel="stylesheet" type="text/css" href="/assets/show.css">
-</head>
-<body>
+  <head>
+    <h1>Available Orders</h1>
+    <link rel="stylesheet" type="text/css" href="/assets/show.css">
+  </head>
+  <body>
   <% Order.all.each do |order| %>
-    <% if order.order_status == "Pending" %>
+    <% if order.order_status == "Pending" || order.order_status =="InProgress" %>
       <div class="receipt">
         <div class="order">
           <div class="header">

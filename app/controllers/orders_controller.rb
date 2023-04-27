@@ -14,14 +14,18 @@ class OrdersController < ApplicationController
   
   def show
     @order = current_user.orders
+    if params[:from_search]
+      @order = Order.find(params[:id])
+    end
   end
 
   def search
     @order = Order.find_by(order_number: params[:order_number])
-    if @order
-      render "track"
-    else
-      flash[:alert] = "Order not found"
+    if @order.nil?
+      flash.now[:alert] = "Order not found"
+      render :search 
+    else  
+      redirect_to order_path(@order)
     end
   end
 
@@ -35,6 +39,32 @@ class OrdersController < ApplicationController
       redirect_to currierorder_path, alert: "Unable to accept order"
     end
   end
+
+  def begin
+    @order = Order.find(params[:id])
+    if current_user.currier? && @order.order_status == "Accepted"
+      @order.update_attribute(:order_status, 'InProgress')
+      redirect_to acceptedorder_path, notice: 'Order is now in progress.'
+    end
+  end
+
+  def cancel
+    @order = Order.find(params[:id])
+    @order.update_attribute(:order_status, 'Canceled')
+    @order.update_attribute(:cancellation_reason, params[:cancellation_reason])
+    redirect_to order_path(@order), notice: 'Order has been canceled.'
+  end
+
+  def complete
+    @order = Order.find(params[:id])
+    @order.update_attribute(:order_status, 'Completed')
+    redirect_to order_path(@order), notice: 'Order has been completed.'
+  end
+
+  def history
+    @completed_orders = Order.where(order_status: [:Completed, :Canceled])
+  end
+
   
   private
 
@@ -55,7 +85,9 @@ class OrdersController < ApplicationController
       :goods_type,
       :additional_details,
       :user_id,
-      :order_status)
+      :order_status,
+      :cancellation_reason 
+    )
   end
 end
 

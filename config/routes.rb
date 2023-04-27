@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :orders do
     member do 
       patch 'accept'
+      patch 'begin'
+      patch 'cancel'
+      patch 'complete'
     end
   end
   
@@ -21,9 +24,9 @@ Rails.application.routes.draw do
 
   get '/new', to: 'orders#new'
   get '/show', to: 'orders#show'
-  get '/track', to: 'orders#track'
+  get '/search', to: 'orders#search'
   get '/history', to: 'orders#history'
-
+  
   get '/currierorder', to: 'currier#currierorder'
   get '/acceptedorder', to: 'currier#acceptedorder'
   get '/manageorder', to: 'currier#manageorder'
