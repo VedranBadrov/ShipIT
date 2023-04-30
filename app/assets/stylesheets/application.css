@@ -13,6 +13,23 @@
  *= require_tree .
  *= require_self
  */
+ 
+*= require home
+*= require aboutus
+*= require careers
+*= require currierportal
+*= require receiversender
+*= require costcalculator
 
- *= require_navbar
+*= require new
+*= require show
+*= require history
+*= require confirmation
+
+*= require currierorder
+*= require acceptedorder
+*= require currierhistory
+*= require manageorder
+
+
  

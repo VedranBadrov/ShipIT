@@ -4,9 +4,16 @@
   
   .navbar-brand,
   .navbar-nav li a {
-    color: lightblue;
+    color: orange;
   }
   
   .navbar-nav li a:hover {
-    border-bottom: 2px solid lightblue;
+    border-bottom: 2px solid orange;
   }
+
+  .navbar .nav-item .btn-primary {
+    background-color: orange;
+    border-color: orange;
+    color: black;
+  }
+  

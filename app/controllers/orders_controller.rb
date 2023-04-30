@@ -8,8 +8,15 @@ class OrdersController < ApplicationController
     @order.user_id = current_user.id
     @order.order_number = SecureRandom.alphanumeric(8).upcase
     if @order.save
-      flash[:success] = "The order has been submitted"
+      flash[:success] = "The has been created"
+      redirect_to confirmation_order_path(@order)
+    else
+      render :new
     end
+  end
+
+  def confirmation 
+    @order = Order.find(params[:id])
   end
   
   def show
@@ -23,7 +30,6 @@ class OrdersController < ApplicationController
     @order = Order.find_by(order_number: params[:order_number])
     if @order.nil?
       flash.now[:alert] = "Order not found"
-      render :search 
     else  
       redirect_to order_path(@order)
     end
@@ -38,6 +44,11 @@ class OrdersController < ApplicationController
     else
       redirect_to currierorder_path, alert: "Unable to accept order"
     end
+  end
+
+  def manage 
+    @order = Order.find(params[:id])
+    render 'currier/manageorder'
   end
 
   def begin
@@ -65,6 +76,11 @@ class OrdersController < ApplicationController
     @completed_orders = Order.where(order_status: [:Completed, :Canceled])
   end
 
+  def costcalculator
+    @order = Order.new(order_params)
+    @cost = @order.quantity * @order.weight * @order.distance
+    render 'costcalculator'
+  end
   
   private
 
@@ -86,7 +102,9 @@ class OrdersController < ApplicationController
       :additional_details,
       :user_id,
       :order_status,
-      :cancellation_reason 
+      :cancellation_reason,
+      :weight,
+      :distance
     )
   end
 end

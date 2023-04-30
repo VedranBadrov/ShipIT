@@ -1,10 +1,10 @@
-
 .receipt {
   font-family: Arial, sans-serif;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
+  background-color: white;
   border: 1px solid #ddd;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
@@ -45,6 +45,7 @@
 .order-number {
   font-size: 20px;
   font-weight: bold;
+  color:black;
 }
 
 .order-date {
@@ -92,5 +93,18 @@
     display: none;
   }
 }
+
+.search-label {
+  width: 120px;
+}
+
+.search-field {
+  width: 200px;
+}
+
+.search-button {
+  width: 80px;
+}
+
 
   

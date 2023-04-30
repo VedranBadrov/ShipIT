@@ -8,11 +8,9 @@ Rails.application.routes.draw do
       patch 'begin'
       patch 'cancel'
       patch 'complete'
+      get 'confirmation'
     end
   end
-  
-
-  #put :accept, on: :currier
 
   root 'main#home'
   
@@ -21,6 +19,8 @@ Rails.application.routes.draw do
   get '/receiversender', to: 'main#receiversender'
   get '/currierportal', to: 'main#currierportal'
   get '/costcalculator', to: 'main#costcalculator'
+  post 'orders/costcalculator', to: 'orders#costcalculator', as: 'costcalculator_orders'
+
 
   get '/new', to: 'orders#new'
   get '/show', to: 'orders#show'
@@ -29,7 +29,8 @@ Rails.application.routes.draw do
   
   get '/currierorder', to: 'currier#currierorder'
   get '/acceptedorder', to: 'currier#acceptedorder'
-  get '/manageorder', to: 'currier#manageorder'
+  get '/manage/:id', to: 'orders#manage', as: 'manage_order'
+  
   get '/routeplanner', to: 'currier#routeplanner'
   get '/curriertrack', to: 'currier#curriertrack'
   get '/currierhistory', to: 'currier#currierhistory'

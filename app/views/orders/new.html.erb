@@ -1,15 +1,16 @@
 <h1>New Order</h1>
-<link rel="stylesheet" type="text/css" href="/assets/new-order-form.css">
+<%= stylesheet_link_tag 'new', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'new' %>
 <%= form_for @order do |f| %>
   <div class="form-group">
-    <%= f.label :start_destination, "Start destination details" %>
+    <%= f.label :start_destination, "Pick-up point details" %>
     <%= f.text_field :start_destination_address_line_1, class: 'form-control', placeholder: 'Address line 1' %>
     <%= f.text_field :start_destination_address_line_2, class: 'form-control', placeholder: 'Address line 2' %>
     <%= f.text_field :start_destination_city, class: 'form-control', placeholder: 'City' %>
     <%= f.text_field :start_destination_postcode, class: 'form-control', placeholder: 'Postcode' %>
   </div>
   <div class="form-group">
-    <%= f.label :final_destination, "Final Destination Details" %>
+    <%= f.label :final_destination, "Drop-off point details" %>
     <%= f.text_field :final_destination_address_line_1, class: 'form-control', placeholder: 'Final address line 1' %>
     <%= f.text_field :final_destination_address_line_2, class: 'form-control', placeholder: 'Final address line 2' %>
     <%= f.text_field :final_destination_city, class: 'form-control', placeholder: 'Final destination city' %>
@@ -33,5 +34,6 @@
     </div>
   <% end %>
   <%= f.submit 'Submit', class: 'btn btn-primary', type: 'submit' %>
+  
 <% end %>
 

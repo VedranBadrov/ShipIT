@@ -1,0 +1,119 @@
+
+.receipt {
+    font-family: Arial, sans-serif;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    box-sizing: border-box;
+  }
+  
+  .receipt .start-destination,
+  .receipt .final-destination {
+    white-space: pre-wrap;
+  }
+  
+  .receipt .details {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .receipt .details > * {
+    flex: 1 1 100%;
+  }
+  
+  .receipt .status {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .order {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .order-number {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+  }
+  
+  .order-date {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .details {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+  
+  .start-destination,
+  .final-destination,
+  .quantity,
+  .goods-type,
+  .additional-details {
+    width: 50%;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .status {
+    font-size: 14px;
+    color: #666;
+    text-align: right;
+  }
+  
+  @media print {
+    .receipt {
+      max-width: none;
+      border: none;
+      box-shadow: none;
+      padding: 0;
+    }
+  
+    .order {
+      border: none;
+      margin-bottom: 0;
+    }
+  
+    .status {
+      display: none;
+    }
+  }
+  
+  .search-label {
+    width: 120px;
+  }
+  
+  .search-field {
+    width: 200px;
+  }
+  
+  .search-button {
+    width: 80px;
+  }
+  
+  .btn.btn-primary {
+    background-color: orange;
+    color: black;
+    transition: all 0.3s ease;
+  }
+  
+  .btn.btn-primary:hover {
+    transform: scale(1.1);
+  }
+  

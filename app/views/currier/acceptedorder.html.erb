@@ -2,49 +2,51 @@
 <html>
   <head>
     <title>Accepted Orders</title>
-    <link rel="stylesheet" type="text/css" href="/assets/show.css">
+    <%= stylesheet_link_tag 'acceptedorder', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
-  <h1>Orders list</h1>
-  <% Order.all.each do |order| %>
-    <% if order.order_status == "Accepted" || order.order_status == "InProgress" %>
-      <div class="receipt">
-        <div class="order">
-          <div class="header">
-            <div class="order-number">Order Number: <%= order.order_number %></div>
-            <div class="order-date">Order Created At: <%= order.created_at.strftime('%d %b %Y') %></div>
-          </div>
-          <div class="body">
-            <div class="details">
-            <div class="start-destination">
-              From: 
-              <%= order.start_destination_address_line_1 %>,
-              <%= order.start_destination_address_line_2 %>,
-              <%= order.start_destination_city %>,
-              <%= order.start_destination_postcode %>
+    <h1>Orders list</h1>
+    <% Order.all.each do |order| %>
+      <% if order.order_status == "Accepted" || order.order_status == "InProgress" %>
+        <div class="receipt">
+          <div class="order">
+            <div class="header">
+              <div class="order-number">Order Number: <%= order.order_number %></div>
+              <div class="order-date">Order Created At: <%= order.created_at.strftime('%d %b %Y') %></div>
             </div>
-            <div class="final-destination">
-              To: 
-              <%= order.final_destination_address_line_1 %>,
-              <%= order.final_destination_address_line_2 %>,
-              <%= order.final_destination_city %>,
-              <%= order.final_destination_postcode %>
-            </div>
-            <div class="quantity">Quantity: <%= order.quantity %></div>
-            <div class="goods-type">Goods Type: <%= order.goods_type %></div>
-            <% if order.additional_details.present? %>
-              <div class="additional-details">Additional Details: <%= order.additional_details %></div>
-            <% end %>
-            <div class="status">
-              Status: <%= order.order_status %>
-            </div>
-            <div class="manage-button">
-              <a href="/manageorder"><button>Manage order</button></a>
+            <div class="body">
+              <div class="details">
+                <div class="start-destination">
+                  From: 
+                  <%= order.start_destination_address_line_1 %>,
+                  <%= order.start_destination_address_line_2 %>,
+                  <%= order.start_destination_city %>,
+                  <%= order.start_destination_postcode %>
+                </div>
+                <div class="final-destination">
+                  To: 
+                  <%= order.final_destination_address_line_1 %>,
+                  <%= order.final_destination_address_line_2 %>,
+                  <%= order.final_destination_city %>,
+                  <%= order.final_destination_postcode %>
+                </div>
+                <div class="quantity">Quantity: <%= order.quantity %></div>
+                <div class="goods-type">Goods Type: <%= order.goods_type %></div>
+                <% if order.additional_details.present? %>
+                  <div class="additional-details">Additional Details: <%= order.additional_details %></div>
+                <% end %>
+                <div class="status">
+                  Status: <%= order.order_status %>
+                </div>
+                <div class="manage-button">
+                  <%= link_to "Manage Order", manage_order_path(order.id) %>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+        <div class="clearfix"></div>
+      <% end %>
     <% end %>
-  <% end %>
   </body>
 </html>

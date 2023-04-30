@@ -1,3 +1,0 @@
-class TrackingController < ApplicationController
-
-end

@@ -1,0 +1,50 @@
+body {
+  background-image: url('transportbackground.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif; /* change the default font to Roboto */
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif; /* change the font of h1 to Open Sans */
+  font-size: 36px; /* increase the font size */
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  color: white;
+  font-family: 'Roboto', sans-serif; /* change the font of labels to Roboto */
+}
+
+input[type=text], textarea {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif; /* change the font of input and textarea to Roboto */
+}
+
+
+
+.btn-primary {
+  display: block;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form-control {
+  margin: 0 auto;
+  margin-top: 10px;
+}
