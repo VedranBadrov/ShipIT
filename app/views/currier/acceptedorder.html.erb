@@ -39,7 +39,7 @@
                   Status: <%= order.order_status %>
                 </div>
                 <div class="manage-button">
-                  <%= link_to "Manage Order", manage_order_path(order.id) %>
+                  <%= button_to "Manage Order", manage_order_path(order.id), method: :get, class: "btn btn-primary" %>
                 </div>
               </div>
             </div>

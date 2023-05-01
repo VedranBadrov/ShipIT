@@ -25,6 +25,7 @@
       </div>
       <div class="card-footer">
         <% if current_user.currier? && @order.order_status == "Accepted" %>
+          <%= button_to "Cancel", cancel_order_path(@order), method: :patch, class: "btn btn-danger" %>
           <%= button_to "Begin", begin_order_path(@order), method: :patch, class: "btn btn-primary" %>
         <% elsif current_user.currier? && @order.order_status == "InProgress" %>
           <%= button_to "Cancel", cancel_order_path(@order), method: :patch, class: "btn btn-danger" %>

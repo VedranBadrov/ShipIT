@@ -20,9 +20,9 @@
         </div>
         <div class="cta">
           <% if current_user %>
-            <%= link_to "Ship Now", new_order_path, class: "btn btn-lg btn-primary" %>
+            <%= link_to "Ship Now", new_order_path, class: "btn btn-lg btn-ship" %>
           <% else %>
-            <%= link_to "Get Started", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+            <%= link_to "Get Started", new_user_registration_path, class: "btn btn-lg btn-ship" %>
           <% end %>
         </div>
       </div>

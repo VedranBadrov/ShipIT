@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       patch 'begin'
       patch 'cancel'
       patch 'complete'
+      get 'manage'
       get 'confirmation'
     end
   end
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   get '/aboutus', to: 'main#aboutus'
   get '/careers', to: 'main#careers'
   get '/receiversender', to: 'main#receiversender'
+  get '/receiver', to: 'main#receiver'
   get '/currierportal', to: 'main#currierportal'
   get '/costcalculator', to: 'main#costcalculator'
   post 'orders/costcalculator', to: 'orders#costcalculator', as: 'costcalculator_orders'
@@ -29,7 +31,7 @@ Rails.application.routes.draw do
   
   get '/currierorder', to: 'currier#currierorder'
   get '/acceptedorder', to: 'currier#acceptedorder'
-  get '/manage/:id', to: 'orders#manage', as: 'manage_order'
+ 
   
   get '/routeplanner', to: 'currier#routeplanner'
   get '/curriertrack', to: 'currier#curriertrack'

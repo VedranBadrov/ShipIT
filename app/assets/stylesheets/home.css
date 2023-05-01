@@ -1,5 +1,7 @@
 body {
-  background-color: #f7f7f7;
+  background-image: url('transportbackground.jpg');
+  background-repeat: repeat;
+  background-size: cover;
   font-family: Arial, sans-serif;
 }
 
@@ -29,7 +31,7 @@ body {
   color: orange; /* added */
 }
 
-.btn-primary {
+.btn-account {
   background-color: #fffb00;
   border-color: #000000;
   border-radius: 20px;
@@ -40,9 +42,13 @@ body {
   text-decoration: none;
 }
 
-.btn-primary:hover {
+.btn-account:hover {
   background-color: #0069d9;
   border-color: #0062cc;
+}
+
+.btn-ship {
+  background-color: orange;
 }
 
 h1 {

@@ -1,7 +1,4 @@
 body {
-  background-image: url('transportbackground.jpg');
-  background-repeat: repeat;
-  background-size: cover;
   font-family: 'Roboto', sans-serif; /* change the default font to Roboto */
 }
 
@@ -16,7 +13,7 @@ label {
   margin-bottom: 5px;
   font-size: 14px;
   font-weight: bold;
-  color: white;
+  color: black;
   font-family: 'Roboto', sans-serif; /* change the font of labels to Roboto */
 }
 
@@ -28,8 +25,10 @@ input[type=text], textarea {
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 14px;
-  font-family: 'Roboto', sans-serif; /* change the font of input and textarea to Roboto */
-}
+  font-family: 'Roboto', sans-serif;
+  background-color: black;
+  color: orange; /* change the text color to orange */
+  }
 
 
 

@@ -1,21 +1,26 @@
-/* Customize the jumbotron */
-.jumbotron {
-    background-image: url("https://source.unsplash.com/1600x900/?delivery");
-    height: 900px;
-    background-size: cover;
-    color: white;
-    text-shadow: black 0.1em 0.1em 0.2em;
-  }
-  /* Customize the section headers */
-  h2 {
-    font-size: 3em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    color: #007bff;
-  }
-  /* Customize the section paragraphs */
-  p {
-    font-size: 1.2em;
-    line-height: 1.5;
-  }
-  
+h1, h2 {
+  font-size: 3em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: #007bff;
+}
+
+.card {
+  margin-bottom: 2em;
+}
+
+.card-body {
+  background-color: black;
+  border-radius: 0.5em;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.5em;
+  color: orange;
+}
+
+.card-text {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
