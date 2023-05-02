@@ -19,8 +19,10 @@
           <p>ShipIT offers a fast, reliable, and secure shipping service for your items.</p>
         </div>
         <div class="cta">
-          <% if current_user %>
+          <% if current_user && current_user.role == "user" %>
             <%= link_to "Ship Now", new_order_path, class: "btn btn-lg btn-ship" %>
+          <% elsif current_user && current_user.role == "currier" %>
+            <%= link_to "Currier Order", currierorder_path, class: "btn btn-lg btn-ship" %>
           <% else %>
             <%= link_to "Get Started", new_user_registration_path, class: "btn btn-lg btn-ship" %>
           <% end %>
@@ -34,4 +36,3 @@
     </div>
   </body>
 </html>
-

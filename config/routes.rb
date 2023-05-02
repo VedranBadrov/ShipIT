@@ -11,7 +11,11 @@ Rails.application.routes.draw do
       get 'manage'
       get 'confirmation'
     end
+    collection do
+      get 'search'
+    end
   end
+  
 
   root 'main#home'
   
@@ -20,14 +24,13 @@ Rails.application.routes.draw do
   get '/receiversender', to: 'main#receiversender'
   get '/receiver', to: 'main#receiver'
   get '/currierportal', to: 'main#currierportal'
-  get '/costcalculator', to: 'main#costcalculator'
   post 'orders/costcalculator', to: 'orders#costcalculator', as: 'costcalculator_orders'
 
 
   get '/new', to: 'orders#new'
   get '/show', to: 'orders#show'
-  get '/search', to: 'orders#search'
   get '/history', to: 'orders#history'
+  get '/costcalculator', to: 'orders#costcalculator'
   
   get '/currierorder', to: 'currier#currierorder'
   get '/acceptedorder', to: 'currier#acceptedorder'

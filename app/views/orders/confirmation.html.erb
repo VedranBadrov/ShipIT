@@ -1,13 +1,21 @@
 <h1>Order Confirmation</h1>
 <%= stylesheet_link_tag 'confirmation', media: 'all', 'data-turbolinks-track': 'reload' %>
-
 <p>Your order (Order Number: <%= @order.order_number %>) has been created successfully:</p>
 <ul>
-  <li>Start destination: <%= @order.start_destination %></li>
-  <li>Final destination: <%= @order.final_destination %></li>
+  <li>Start destination address:
+    <%= @order.start_destination_address_line_1 %>,
+    <%= @order.start_destination_address_line_2 %>,
+    <%= @order.start_destination_city %>,
+    <%= @order.start_destination_postcode %>
+  </li>
+  <li>Final destination address:
+    <%= @order.final_destination_address_line_1 %>,
+    <%= @order.final_destination_address_line_2 %>,
+    <%= @order.final_destination_city %>,
+    <%= @order.final_destination_postcode %>
+  </li>
   <li>Quantity: <%= @order.quantity %></li>
   <li>Goods type: <%= @order.goods_type %></li>
   <li>Additional details: <%= @order.additional_details %></li>
   <%= link_to 'View My Orders', order_path(@order), class: 'btn btn-primary' %>
-
 </ul>

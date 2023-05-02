@@ -1,19 +1,27 @@
 .navbar {
-    background-color: black;
-  }
-  
-  .navbar-brand,
-  .navbar-nav li a {
-    color: orange;
-  }
-  
-  .navbar-nav li a:hover {
-    border-bottom: 2px solid orange;
-  }
+  background-color: black;
+  justify-content: center;
+}
 
-  .navbar .nav-item .btn-account {
-    background-color: orange;
-    border-color: orange;
-    color: black;
-  }
+.navbar-brand,
+.navbar-nav li a {
+  color: orange;
+}
+
+.navbar-nav li a:hover {
+  border-bottom: 2px solid orange;
+}
+
+.navbar .nav-item .btn-account {
+  background-color: orange;
+  border-color: orange;
+  color: black;
+}
+
+.navbar-nav > li:nth-last-child(2) {
+  margin-right: 1rem;
+}
+
+
+
   

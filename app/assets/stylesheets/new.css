@@ -11,9 +11,10 @@ h1 {
 label {
   display: block;
   margin-bottom: 5px;
+  margin-top: 15px;
   font-size: 14px;
   font-weight: bold;
-  color: black;
+  color: orange;
   font-family: 'Roboto', sans-serif; /* change the font of labels to Roboto */
 }
 
@@ -21,29 +22,32 @@ input[type=text], textarea {
   width: 100%;
   max-width: 400px;
   padding: 8px;
-  border: 1px solid #ccc;
+  border: 1px solid orange;
   border-radius: 4px;
   box-sizing: border-box;
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
-  background-color: black;
   color: orange; /* change the text color to orange */
-  }
-
-
-
-.btn-primary {
-  display: block;
-  margin: 0 auto;
 }
 
-.form-group {
-  margin-bottom: 20px;
-  text-align: center;
-  margin-top: 20px;
+.form-group input[type=text] {
+  background-color: black;
+  color: orange;
+}
+
+
+
+.form-area {
+  background-color: black;
+  color: orange;
 }
 
 .form-control {
   margin: 0 auto;
   margin-top: 10px;
+}
+
+.btn-primary {
+  display: block;
+  margin: 0 auto;
 }

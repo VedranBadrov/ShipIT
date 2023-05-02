@@ -7,13 +7,12 @@
 <body>
   <div class="search-container">
     <h1>Seach for an order</h1>
-  <%= form_tag(search_path, method: "get") do %>
-    <%= label_tag(:order_number, "Enter Tracking Number:", class: "search-label") %>
-    <%= text_field_tag(:order_number, nil, class: "search-field") %>
-    <%= submit_tag("Search", class: "search-button") %>
-  <% end %>
-    
-
+    <%= form_tag(search_orders_path(current_user.orders), method: "get") do %>
+      <%= label_tag(:order_number, "Enter Tracking Number:", class: "search-label") %>
+      <%= text_field_tag(:order_number, nil, class: "search-field") %>
+      <%= submit_tag("Search", class: "search-button") %>
+      <% puts 'order found'%>
+    <% end %>
     <% if flash[:alert] %>
       <div class="alert alert-danger"><%= flash[:alert] %></div>
     <% end %>

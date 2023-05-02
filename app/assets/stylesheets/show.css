@@ -96,7 +96,8 @@
 }
 
 .search-label {
-  width: 120px;
+  text-align: center;
+  margin-left: 750px;
 }
 
 .search-field {
@@ -105,7 +106,8 @@
 
 .search-button {
   width: 80px;
-  color:black;
+  background-color: black;
+  color : orange;
 }
 
 .search-container {

@@ -63,13 +63,13 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:id])
     @order.update_attribute(:order_status, 'Canceled')
     @order.update_attribute(:cancellation_reason, params[:cancellation_reason])
-    redirect_to order_path(@order), notice: 'Order has been canceled.'
+    redirect_to currierhistory_path, notice: 'Order has been canceled.'
   end
 
   def complete
     @order = Order.find(params[:id])
     @order.update_attribute(:order_status, 'Completed')
-    redirect_to order_path(@order), notice: 'Order has been completed.'
+    redirect_to currierhistory_path, notice: 'Order has been completed.'
   end
 
   def history

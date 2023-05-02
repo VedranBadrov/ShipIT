@@ -6,8 +6,6 @@
 </head>
 <body>
 <div class="container">
-  
-  
   <% if @order %>
     <div class="card mb-3">
       <div class="card-header">
@@ -22,8 +20,6 @@
         </p>
         <h6 class="card-subtitle mb-2 text-muted">Status:</h6>
         <p class="card-text"><%= @order.order_status %></p>
-      </div>
-      <div class="card-footer">
         <% if current_user.currier? && @order.order_status == "Accepted" %>
           <%= button_to "Cancel", cancel_order_path(@order), method: :patch, class: "btn btn-danger" %>
           <%= button_to "Begin", begin_order_path(@order), method: :patch, class: "btn btn-primary" %>
@@ -39,5 +35,6 @@
 </div>
 </body>
 </html>
+
 
 

@@ -26,7 +26,7 @@
   </div>
   <div class="form-group">
     <%= f.label :additional_details %>
-    <%= f.text_area :additional_details, class: 'form-control', placeholder: 'Anything the currier should be aware of?' %>
+    <%= f.text_area :additional_details, class: 'form-area', placeholder: 'Anything the currier should be aware of?' %>
   </div>
   <% if flash[:success] %>
     <div class="alert alert-success">
@@ -34,6 +34,5 @@
     </div>
   <% end %>
   <%= f.submit 'Submit', class: 'btn btn-primary', type: 'submit' %>
-  
 <% end %>
 
