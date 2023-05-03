@@ -1,6 +1,10 @@
+<!DOCTYPE html>
+<html>
+<head>
 <h1>New Order</h1>
 <%= stylesheet_link_tag 'new', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= javascript_include_tag 'new' %>
+<%= javascript_include_tag 'new', 'data-turbolinks-track': 'reload' %>
+<body>
 <%= form_for @order do |f| %>
   <div class="form-group">
     <%= f.label :start_destination, "Pick-up point details" %>
@@ -28,11 +32,17 @@
     <%= f.label :additional_details %>
     <%= f.text_area :additional_details, class: 'form-area', placeholder: 'Anything the currier should be aware of?' %>
   </div>
+  <div class= "form-group">
+    <%= f.label :pickup_datetime %>
+    <%= f.datetime_local_field :pickup_datetime, class: 'datetime-picker' %>
+  </div>
+  <%= f.submit 'Submit', class: 'btn btn-primary', type: 'submit' %>
+<% end %>
   <% if flash[:success] %>
     <div class="alert alert-success">
       <%= flash[:success] %>
     </div>
   <% end %>
-  <%= f.submit 'Submit', class: 'btn btn-primary', type: 'submit' %>
-<% end %>
+</body>
+</html>
 

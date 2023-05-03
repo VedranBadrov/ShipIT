@@ -30,12 +30,23 @@ input[type=text], textarea {
   color: orange; /* change the text color to orange */
 }
 
+.form-group input[type=datetime-local] {
+  width: 100%;
+  max-width: 400px;
+  padding: 8px;
+  border: 1px solid orange;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  color: orange;
+  background-color: rgb(243, 243, 243);
+}
+
 .form-group input[type=text] {
   background-color: black;
   color: orange;
 }
-
-
 
 .form-area {
   background-color: black;

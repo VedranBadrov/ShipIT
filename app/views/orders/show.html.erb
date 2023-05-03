@@ -47,7 +47,8 @@
               <% if order.additional_details.present? %>
                 <div class="additional-details">Additional Details: <%= order.additional_details %></div>
               <% end %>
-            </div>
+              </div>
+              <div class = "pickupdate">Pick-up date: <%= order.pickup_datetime %></div>
             <div class="status">
               Status: <%= order.order_status %>
             </div>

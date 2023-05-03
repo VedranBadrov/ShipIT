@@ -4,7 +4,8 @@
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    background-color: white;
+    background-color: black;
+    color: orange;
     border: 1px solid #ddd;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
@@ -49,13 +50,14 @@
   
   .order-date {
     font-size: 14px;
-    color: #666;
+    color: orange;
   }
   
   .details {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 10px;
+    color: orange;
   }
   
   .start-destination,
@@ -65,7 +67,7 @@
   .additional-details {
     width: 50%;
     font-size: 14px;
-    color: #666;
+    color: orange;
     margin-bottom: 5px;
   }
   

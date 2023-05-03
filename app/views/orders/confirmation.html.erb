@@ -16,6 +16,9 @@
   </li>
   <li>Quantity: <%= @order.quantity %></li>
   <li>Goods type: <%= @order.goods_type %></li>
+  <% if @order.additional_details.present? %>
   <li>Additional details: <%= @order.additional_details %></li>
+  <% end %>
+  <li>Pick-up Date & Time: <%= @order.pickup_datetime %></li>
   <%= link_to 'View My Orders', order_path(@order), class: 'btn btn-primary' %>
 </ul>

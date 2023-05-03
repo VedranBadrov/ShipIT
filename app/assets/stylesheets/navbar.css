@@ -1,6 +1,7 @@
 .navbar {
-  background-color: black;
+  background-image: url('navbarbg.jpg');
   justify-content: center;
+  background-size: cover;
 }
 
 .navbar-brand,
@@ -12,7 +13,7 @@
   border-bottom: 2px solid orange;
 }
 
-.navbar .nav-item .btn-account {
+.navbar .nav-item .btn-account .signin .signup .manage {
   background-color: orange;
   border-color: orange;
   color: black;

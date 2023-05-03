@@ -10,9 +10,8 @@ h1, h2 {
 }
 
 .card-body {
-  background-color: black;
-  border-radius: 0.5em;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+  background-image: url('navbarbg.jpg');
+  box-shadow: 0px 0px 20px rgb(31, 166, 219);
 }
 
 .card-title {

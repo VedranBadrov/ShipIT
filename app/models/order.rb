@@ -10,13 +10,11 @@ class Order < ApplicationRecord
       self.order_status ||= :Pending
     end
 
-    def calculate_cost
-      cost_per_item = 1.50
+    def costcalculator
+      cost_per_item = 1.00
       cost_per_kg = 2.00
       cost_per_km = 0.10
-      
       cost = (quantity * cost_per_item) + (weight * cost_per_kg) + (distance * cost_per_km)
-      
       return cost
     end
     

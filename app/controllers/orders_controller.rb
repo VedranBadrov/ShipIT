@@ -77,10 +77,16 @@ class OrdersController < ApplicationController
   end
 
   def costcalculator
-    @order = Order.new(order_params)
-    @cost = @order.quantity * @order.weight * @order.distance
+    weight = params[:weight].to_f
+    distance = params[:distance].to_f
+    quantity = params[:quantity].to_i
+
+    cost = weight * distance * quantity * 0.05
+
+    @cost = cost.round(2)
     render 'costcalculator'
   end
+  
   
   private
 
@@ -104,7 +110,8 @@ class OrdersController < ApplicationController
       :order_status,
       :cancellation_reason,
       :weight,
-      :distance
+      :distance,
+      :pickup_datetime
     )
   end
 end

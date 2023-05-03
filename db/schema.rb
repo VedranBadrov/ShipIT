@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_30_042139) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_03_074528) do
   create_table "orders", force: :cascade do |t|
     t.string "order_number"
     t.string "start_destination"
@@ -33,6 +33,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_30_042139) do
     t.string "cancellation_reason"
     t.float "weight"
     t.float "distance"
+    t.datetime "pickup_datetime"
   end
 
   create_table "users", force: :cascade do |t|

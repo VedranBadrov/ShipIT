@@ -16,6 +16,7 @@ Rails.application.routes.draw do
     end
   end
   
+  
 
   root 'main#home'
   
@@ -24,18 +25,16 @@ Rails.application.routes.draw do
   get '/receiversender', to: 'main#receiversender'
   get '/receiver', to: 'main#receiver'
   get '/currierportal', to: 'main#currierportal'
-  post 'orders/costcalculator', to: 'orders#costcalculator', as: 'costcalculator_orders'
-
-
+  
   get '/new', to: 'orders#new'
   get '/show', to: 'orders#show'
   get '/history', to: 'orders#history'
   get '/costcalculator', to: 'orders#costcalculator'
+  post 'orders/costcalculator'
   
   get '/currierorder', to: 'currier#currierorder'
   get '/acceptedorder', to: 'currier#acceptedorder'
  
-  
   get '/routeplanner', to: 'currier#routeplanner'
   get '/curriertrack', to: 'currier#curriertrack'
   get '/currierhistory', to: 'currier#currierhistory'
