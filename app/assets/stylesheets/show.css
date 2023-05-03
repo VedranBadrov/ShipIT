@@ -1,12 +1,12 @@
 .receipt {
+  background-image: url('navbarbg.jpg');
   font-family: Arial, sans-serif;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  background-color: black;
-  border: 1px solid #ddd;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  border: 1px solid orange;
+  box-shadow: 0 0 5px orange);
   margin-bottom: 20px;
   box-sizing: border-box;
 }
@@ -58,6 +58,7 @@
   flex-wrap: wrap;
   margin-bottom: 10px;
   color: white;
+  text-align: center;
 }
 
 .start-destination,
@@ -69,11 +70,12 @@
   font-size: 14px;
   color: white;
   margin-bottom: 5px;
+  text-align: center;
 }
 
 .status {
   font-size: 14px;
-  color: white;
+  color: orange;
   text-align: right;
 }
 
@@ -115,7 +117,7 @@
 }
 
 .search-container input[type=text] {
-  background-color: black;
+  background-image: url('navbarbg.jpg');
   color: orange;
 }
 

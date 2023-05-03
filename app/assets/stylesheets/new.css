@@ -44,13 +44,17 @@ input[type=text], textarea {
 }
 
 .form-group input[type=text] {
-  background-color: black;
+  background-image: url('navbarbg.jpg');
   color: orange;
 }
 
 .form-area {
-  background-color: black;
+  background-image: url('navbarbg.jpg');
   color: orange;
+}
+
+.datetime-picker {
+  background-image: url('navbarbg.jpg');
 }
 
 .form-control {

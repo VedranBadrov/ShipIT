@@ -29,6 +29,7 @@ body {
 .content {
   text-align: center;
   color: orange; /* added */
+  background-image: url:('navbarbg.jpg');
 }
 
 .btn-account {
