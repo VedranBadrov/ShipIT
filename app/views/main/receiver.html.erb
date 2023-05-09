@@ -1,0 +1,41 @@
+<head>
+  <%= stylesheet_link_tag 'receive', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+<h1>Receive Items</h1>
+
+<% orders = Order.where(receiver_email: current_user.email) %>
+
+<% if orders.present? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Order Number</th>
+        <th>Sender</th>
+        <th>Quantity</th>
+        <th>Goods Type</th>
+        <th>Additional Details</th>
+        <th>Pickup Date and Time</th>
+        <th>Current order status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% orders.each do |order| %>
+        <tr>
+          <td><%= order.order_number %></td>
+          <td><%= order.sender_email %></td>
+          <td><%= order.quantity %></td>
+          <td><%= order.goods_type %></td>
+          <td><%= order.additional_details %></td>
+          <td><%= order.pickup_datetime %></td>
+          <td><%= order.order_status %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No items received for this email address.</p>
+<% end %>
+
+
+
+

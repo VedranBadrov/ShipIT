@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%= stylesheet_link_tag 'manageorder', media: 'all', 'data-turbolinks-track': 'reload' %>
-<h1>Manage Order</h1>
+  <title>Manage Order</title>
+  <%= stylesheet_link_tag 'manageorder', media: 'all', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
-<div class="container">
-  <% if @order %>
-    <div class="card mb-3">
-      <div class="card-header">
-        <h5 class="card-title">Order Number: <%= @order.order_number %></h5>
+  <div class="container">
+    <h1>Manage Order</h1>
+    <% if @order %>
+      <div class="card mb-3">
+        <div class="card-header">
+          <h5 class="card-title">Order Number: <%= @order.order_number %></h5>
+        </div>
+        <div class="card-body">
+          <h6 class="card-subtitle mb-2 text-muted">Destination:</h6>
+          <p class="card-text">
+            <%= @order.final_destination_address_line_1 %><br>
+            <%= @order.final_destination_address_line_2 %><br>
+            <%= @order.final_destination_city %>, <%= @order.final_destination_postcode %>
+          </p>
+          <h6 class="card-subtitle mb-2 text-muted">Status:</h6>
+          <p class="card-text"><%= @order.order_status %></p>
+          <% if current_user.currier? && @order.order_status == "Accepted" %>
+            <%= button_to "Cancel", cancel_order_path(@order), method: :patch, class: "btn btn-danger" %>
+            <%= button_to "Begin", begin_order_path(@order), method: :patch, class: "btn btn-primary" %>
+          <% elsif current_user.currier? && @order.order_status == "InProgress" %>
+            <%= button_to "Cancel", cancel_order_path(@order), method: :patch, class: "btn btn-danger" %>
+            <%= button_to "Complete", complete_order_path(@order), method: :patch, class: "btn btn-success" %>
+          <% end %>
+        </div>
       </div>
-      <div class="card-body">
-        <h6 class="card-subtitle mb-2 text-muted">Destination:</h6>
-        <p class="card-text">
-          <%= @order.final_destination_address_line_1 %><br>
-          <%= @order.final_destination_address_line_2 %><br>
-          <%= @order.final_destination_city %>, <%= @order.final_destination_postcode %>
-        </p>
-        <h6 class="card-subtitle mb-2 text-muted">Status:</h6>
-        <p class="card-text"><%= @order.order_status %></p>
-        <% if current_user.currier? && @order.order_status == "Accepted" %>
-          <%= button_to "Cancel", cancel_order_path(@order), method: :patch, class: "btn btn-danger" %>
-          <%= button_to "Begin", begin_order_path(@order), method: :patch, class: "btn btn-primary" %>
-        <% elsif current_user.currier? && @order.order_status == "InProgress" %>
-          <%= button_to "Cancel", cancel_order_path(@order), method: :patch, class: "btn btn-danger" %>
-          <%= button_to "Complete", complete_order_path(@order), method: :patch, class: "btn btn-success float-end" %>
-        <% end %>
-      </div>
-    </div>
-  <% else %>
-    <p class="lead">No order selected.</p>
-  <% end %>
-</div>
+    <% else %>
+      <p class="lead">No order selected.</p>
+    <% end %>
+  </div>
 </body>
 </html>
 

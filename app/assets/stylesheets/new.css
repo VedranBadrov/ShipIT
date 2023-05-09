@@ -1,11 +1,11 @@
 body {
-  font-family: 'Roboto', sans-serif; /* change the default font to Roboto */
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
   text-align: center;
-  font-family: 'Open Sans', sans-serif; /* change the font of h1 to Open Sans */
-  font-size: 36px; /* increase the font size */
+  font-family: 'Open Sans', sans-serif; 
+  font-size: 36px;
 }
 
 label {
@@ -15,7 +15,7 @@ label {
   font-size: 14px;
   font-weight: bold;
   color: orange;
-  font-family: 'Roboto', sans-serif; /* change the font of labels to Roboto */
+  font-family: 'Roboto', sans-serif;
 }
 
 input[type=text], textarea {
@@ -27,7 +27,8 @@ input[type=text], textarea {
   box-sizing: border-box;
   font-size: 14px;
   font-family: 'Roboto', sans-serif;
-  color: orange; /* change the text color to orange */
+  color: orange;
+  background-clip: padding-box;
 }
 
 .form-group input[type=datetime-local] {
@@ -46,6 +47,7 @@ input[type=text], textarea {
 .form-group input[type=text] {
   background-image: url('navbarbg.jpg');
   color: orange;
+  background-clip: padding-box;
 }
 
 .form-area {

@@ -1,0 +1,28 @@
+table {
+  border: 1px solid orange;
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+  margin: 0 auto;
+  color: orange;
+  background-image: url('navbarbg.jpg');
+  background-size: cover;
+}
+
+td, th {
+  border: 1px solid #ddd;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+  background-color: orange;
+  color: white;
+}
+
+p {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin-top: 50px;
+  color: orange;
+}

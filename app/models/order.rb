@@ -1,4 +1,5 @@
 class Order < ApplicationRecord
+    attr_accessor :sender_email
     belongs_to :user
     validates :user_id, presence: true
     before_validation :set_default_order_status, if: :new_record?
@@ -14,6 +15,7 @@ class Order < ApplicationRecord
       cost_per_item = 1.00
       cost_per_kg = 2.00
       cost_per_km = 0.10
+      
       cost = (quantity * cost_per_item) + (weight * cost_per_kg) + (distance * cost_per_km)
       return cost
     end

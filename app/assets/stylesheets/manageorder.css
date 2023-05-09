@@ -1,18 +1,22 @@
+.header {
+  margin-top: 20px;
+  text-align: center;
+}
+
 .container {
   max-width: 800px;
   margin: 0 auto;
 }
 
-/* Style for card */
 .card {
   margin-bottom: 20px;
   box-shadow: none;
   border: 1px solid black;
+  margin-top: 20px;
 }
 
-/* Style for card header */
 .card-header {
-  background-color: black;
+  background-image: url('navbarbg.jpg');
   color: orange;
   text-align: center;
 }
@@ -22,10 +26,8 @@
   margin-top: 5px;
 }
 
-/* Style for card body */
 .card-body {
   padding: 20px;
-  background-color: black;
   color: orange;
 }
 
@@ -33,18 +35,15 @@
   margin-bottom: 5px;
 }
 
-/* Style for card footer */
 .card-footer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   height: 100%;
-  background-color: black;
   border-top: 1px solid rgb(179, 179, 179);
 }
 
-/* Style for buttons */
 .btn-success,
 .btn-primary,
 .btn-danger {
@@ -72,9 +71,9 @@
   margin-bottom: 5px;
 }
 
-.btn-primary:hover
+.btn-primary:hover,
 .btn-success:hover {
-  background-color: green;
+  background-color: rgb(2, 197, 2);
   color: black;
 }
 

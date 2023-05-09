@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
- 
+*= require navbar
+*= require devisesessions
+
 *= require home
 *= require aboutus
 *= require careers

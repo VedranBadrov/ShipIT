@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_03_074528) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_05_112015) do
   create_table "orders", force: :cascade do |t|
     t.string "order_number"
     t.string "start_destination"
@@ -34,6 +34,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_03_074528) do
     t.float "weight"
     t.float "distance"
     t.datetime "pickup_datetime"
+    t.string "receiver_email"
   end
 
   create_table "users", force: :cascade do |t|

@@ -5,23 +5,30 @@
 }
 
 .navbar-brand,
-.navbar-nav li a {
+.navbar-nav li a,
+.navbar-nav li button {
   color: orange;
 }
 
-.navbar-nav li a:hover {
+.navbar-brand:hover,
+.navbar-nav li a:hover,
+.navbar-nav li button:hover {
+  color: orange;
+}
+
+.navbar-nav li a:hover,
+.navbar-nav li button:hover {
   border-bottom: 2px solid orange;
 }
 
-.navbar .nav-item .btn-account .signin .signup .manage {
-  background-color: orange;
-  border-color: orange;
-  color: black;
+.navbar-nav li button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
-.navbar-nav > li:nth-last-child(2) {
-  margin-right: 1rem;
-}
+
 
 
 

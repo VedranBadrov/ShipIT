@@ -17,6 +17,7 @@ body {
   margin: 0 auto;
   padding: 20px;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-image: url('navbarbg.jpg');
 }
 
 .main {
@@ -28,28 +29,23 @@ body {
 
 .content {
   text-align: center;
-  color: orange; /* added */
-  background-image: url:('navbarbg.jpg');
-}
-
-.btn-account {
-  background-color: #fffb00;
-  border-color: #000000;
-  border-radius: 20px;
-  color: #030303;
-  padding: 10px 20px;
-  font-size: 18px;
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.btn-account:hover {
-  background-color: #0069d9;
-  border-color: #0062cc;
+  color: orange;
+  
 }
 
 .btn-ship {
+  margin-top: 5px;
   background-color: orange;
+  color: black;
+  border-radius: 0.1;
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-ship:hover {
+  background-color: orange;
+  color: black;
+  border-radius: 0.5rem;
+  transform: scale(1.2);
 }
 
 h1 {
@@ -61,17 +57,23 @@ h1 {
 h2 {
   font-size: 32px;
   margin-bottom: 10px;
-  color: orange; /* added */
+  color: orange;
 }
 
 p {
-  color: orange; /* changed */
+  color: orange;
   font-size: 18px;
   line-height: 1.5;
   margin: 0;
 }
 
 .cta {
-  margin-top:; /* removed extra colon */
-  color: orange; /* added */
+  color: orange;
+}
+
+.footer {
+  padding: 1em 0;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
 }

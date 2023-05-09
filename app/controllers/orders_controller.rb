@@ -7,9 +7,21 @@ class OrdersController < ApplicationController
     @order = Order.new(order_params)
     @order.user_id = current_user.id
     @order.order_number = SecureRandom.alphanumeric(8).upcase
+    @order.sender_email = current_user.email
     if @order.save
-      flash[:success] = "The has been created"
-      redirect_to confirmation_order_path(@order)
+      receiver_email = params[:order][:receiver_email]
+      receiver = User.find_by(email: receiver_email)
+
+      if receiver && receiver == current_user
+        flash[:success] = "Order created!"
+        redirect_to confirmation_path(@order)
+      elsif receiver
+        flash[:success] = "Order created!"
+        redirect_to confirmation_path(id: @order.id, receiver_email: receiver_email)
+      else
+        flash[:warning] = "Receiver email not found"
+        render :new
+      end
     else
       render :new
     end
@@ -33,6 +45,12 @@ class OrdersController < ApplicationController
     else  
       redirect_to order_path(@order)
     end
+  end
+
+  def receiver 
+    receiver_email = params[:receiver_email]
+    @receiver = User.find_by(email: receiver_email)
+    @orders = @receiver.orders if @receiver.present?
   end
 
   def accept 
@@ -92,6 +110,7 @@ class OrdersController < ApplicationController
 
   def order_params
     params.require(:order).permit(
+      :sender_email,
       :order_number,
       :start_destination,
       :start_destination_address_line_1,
@@ -111,7 +130,8 @@ class OrdersController < ApplicationController
       :cancellation_reason,
       :weight,
       :distance,
-      :pickup_datetime
+      :receiver_email,
+      :pickup_datetime,
     )
   end
 end

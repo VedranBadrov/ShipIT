@@ -32,6 +32,10 @@
     <%= f.label :additional_details %>
     <%= f.text_area :additional_details, class: 'form-area', placeholder: 'Anything the currier should be aware of?' %>
   </div>
+  <div class="form-group">
+    <%= f.label :receiver_email %>
+    <%= f.text_field :receiver_email, class: 'form-control', placeholder: 'Receiver email' %>
+  </div>
   <div class= "form-group">
     <%= f.label :pickup_datetime %>
     <%= f.datetime_local_field :pickup_datetime, class: 'datetime-picker' %>

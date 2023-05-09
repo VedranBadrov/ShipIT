@@ -1,12 +1,12 @@
 .receipt {
-  background-image: url('navbarbg.jpg');
   font-family: Arial, sans-serif;
   width: 100%;
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid orange;
-  box-shadow: 0 0 5px orange);
+  background-image: url('navbarbg.jpg');
+  border: 1px solid #ddd;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
   box-sizing: border-box;
 }
@@ -45,7 +45,7 @@
 .order-number {
   font-size: 20px;
   font-weight: bold;
-  color:orange;
+  color: orange;
 }
 
 .order-date {
@@ -57,8 +57,6 @@
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 10px;
-  color: white;
-  text-align: center;
 }
 
 .start-destination,
@@ -68,7 +66,7 @@
 .additional-details {
   width: 50%;
   font-size: 14px;
-  color: white;
+  color: orange;
   margin-bottom: 5px;
   text-align: center;
 }
@@ -98,29 +96,27 @@
 }
 
 .search-label {
-  text-align: center;
-  margin-left: 750px;
+  width: 120px;
 }
 
 .search-field {
-  width: 100px;
+  width: 200px;
 }
 
 .search-button {
   width: 80px;
-  background-color: black;
-  color : orange;
 }
 
-.search-container {
-  margin-bottom: 10px;
+.btn.btn-primary {
+  background-color: orange;
+  color: black;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  margin-bottom: 5px;
 }
 
-.search-container input[type=text] {
-  background-image: url('navbarbg.jpg');
-  color: orange;
+.btn.btn-primary:hover {
+  transform: scale(1.1);
 }
-
-
 
   
