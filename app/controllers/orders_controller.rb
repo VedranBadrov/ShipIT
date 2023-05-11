@@ -11,7 +11,6 @@ class OrdersController < ApplicationController
     if @order.save
       receiver_email = params[:order][:receiver_email]
       receiver = User.find_by(email: receiver_email)
-
       if receiver && receiver == current_user
         flash[:success] = "Order created!"
         redirect_to confirmation_path(@order)
