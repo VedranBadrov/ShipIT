@@ -32,7 +32,6 @@ gem 'jbuilder'
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 gem 'devise'
-
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
 # gem "kredis"
 
@@ -64,6 +63,7 @@ group :development, :test do
   # Linting
   gem 'rubocop'
   gem 'rubocop-rails'
+  gem 'factory_bot_rails', '~> 6.2'
 end
 
 group :development do
@@ -82,4 +82,5 @@ group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+  gem 'minitest', '~> 5.14'
 end

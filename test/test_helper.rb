@@ -15,3 +15,14 @@ module ActiveSupport
     # Add more helper methods to be used by all tests here...
   end
 end
+
+# FactoryBot code goes outside of the ActiveSupport::TestCase class definition
+sequence = 0
+FactoryBot.define do
+  factory :user do
+    name { Faker::Name.name }
+    email { "user#{sequence += 1}@example.com" }
+    password { 'password' }
+  end
+end
+
