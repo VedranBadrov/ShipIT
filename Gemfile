@@ -83,4 +83,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
   gem 'minitest', '~> 5.14'
+  gem 'faker'
 end
